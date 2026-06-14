@@ -19,12 +19,15 @@ st.set_page_config(
 st.title("🚀 AI Resume Assistant")
 st.markdown("Generate ATS-friendly resume content interactively.")
 
+api_key = st.secrets["MISTRAL_API_KEY"]
+
 # ---------------------------------
 # LLM SETUP
 # ---------------------------------
 
 llm = ChatMistralAI(
     model="mistral-small-latest",
+    api_key=api_key,
     temperature=0.7
 )
 
